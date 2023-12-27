@@ -1,0 +1,168 @@
+<html>
+  <head></head>
+  <style>
+    #root {
+      background-color: #8cb714;
+      color: white;
+      font-size: 2em;
+      text-align: center;
+      height: 95vh;
+      width: 500px;
+      display: flex;
+      flex-direction: column;
+      margin: 10;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    input {
+      width: 55vh;
+      height: 5vh;
+      border-radius: 5px;
+      text-align: center;
+      font-size: 18pt;
+      border: none;
+      background-color: rgb(255, 255, 255);
+    }
+
+    button {
+      width: 90px;
+      height: 50px;
+      font-size: 20pt;
+      border: none;
+      border-radius: 10px;
+      background-color: #6a8f04;
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    #login {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 10px;
+    }
+
+    body {
+      display: flex;
+      flex-direction: row;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    h1 {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .background-login {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 95vh;
+      margin: 10;
+      width: 145vh;
+    }
+  </style>
+  <body>
+    <!-- INI KONTEN -->
+    <div id="root">
+      <h1 id="login">Login</h1>
+      <input type="text" placeholder="username" id="usernameInput" />
+      <input type="password" placeholder="password" id="passwordInput" />
+      <button onclick="onLogin()" id="loginButton">Login</button>
+
+      <br />
+      <div id="admin">Login As Admin</div>
+      <div id="basic">Login As Basic User</div>
+      <div id="@Dea">Login As Dea Afrizal</div>
+      <button onclick="onLogout()" id="logoutButton">Log out</button>
+    </div>
+
+    <img src="background.jpg" class="background-login" />
+
+    <script type="application/javascript">
+      let usernameInput = document.getElementById("usernameInput");
+      let passwordInput = document.getElementById("passwordInput");
+      let loginButton = document.getElementById("loginButton");
+      let login = document.getElementById("login");
+      let logoutButton = document.getElementById("logoutButton");
+      let admin = document.getElementById("admin");
+      let basic = document.getElementById("basic");
+      let dea = document.getElementById("@Dea");
+
+      admin.style.display = "none";
+      basic.style.display = "none";
+      dea.style.display = "none";
+      logoutButton.style.display = "none";
+
+      function onLogin() {
+        localStorage.setItem("username", usernameInput.value);
+        logoutButton.style.display = "block";
+
+        if (usernameInput.value == "admin" && passwordInput.value == "123") {
+          usernameInput.style.display = "none";
+          passwordInput.style.display = "none";
+          loginButton.style.display = "none";
+          login.style.display = "none";
+          localStorage.setItem("role", "admin");
+          admin.style.display = "block";
+          basic.style.display = "none";
+          dea.style.display = "none";
+        } else if (
+          usernameInput.value == "@Dea" &&
+          passwordInput.value == "4B@n9_d34"
+        ) {
+          usernameInput.style.display = "none";
+          passwordInput.style.display = "none";
+          loginButton.style.display = "none";
+          login.style.display = "none";
+          login.style.display = "none";
+
+          localStorage.setItem("role", "dea");
+          admin.style.display = "none";
+          basic.style.display = "none";
+          dea.style.display = "block";
+        } else {
+          usernameInput.style.display = "none";
+          passwordInput.style.display = "none";
+          loginButton.style.display = "none";
+          login.style.display = "none";
+
+          localStorage.setItem("role", "basic");
+          basic.style.display = "block";
+          admin.style.display = "none";
+          dea.style.display = "none";
+        }
+      }
+
+      if (localStorage.getItem("username")) {
+        usernameInput.style.display = "none";
+        passwordInput.style.display = "none";
+        loginButton.style.display = "none";
+        logoutButton.style.display = "block";
+        login.style.display = "none";
+
+        if (localStorage.getItem("role") == "admin") {
+          admin.style.display = "block";
+          basic.style.display = "none";
+          dea.style.display = "none";
+        } else if (localStorage.getItem("role") == "dea") {
+          admin.style.display = "none";
+          basic.style.display = "none";
+          dea.style.display = "none";
+        } else {
+          basic.style.display = "block";
+          admin.style.display = "none";
+          dea.style.display = "none";
+        }
+      }
+
+      function onLogout() {
+        localStorage.clear();
+        location.reload();
+      }
+    </script>
+  </body>
+</html>

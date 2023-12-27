@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>Sesi 5!</title>
+  </head>
+  <link rel="stylesheet" href="style.css" />
+  <body>
+    <!-- INI KONTEN -->
+    <div id="root">
+      <h1 id="login">Login / Sign In</h1>
+      <input type="text" placeholder="username" id="usernameInput" />
+      <input type="password" placeholder="password" id="passwordInput" />
+      <div class="btn">
+        <button onclick="onLogin()" id="loginButton">Log In</button>
+        <button onclick="onCreate()" id="createButton">Sign In</button>
+      </div>
+
+      <br />
+      <div id="admin">Login As Admin</div>
+      <div id="basic">Login As Basic User</div>
+      <div id="@Dea">Login As Dea Afrizal</div>
+      <button onclick="onLogout()" id="logoutButton">Log out</button>
+    </div>
+
+    <div id="background">
+      <img src="background.jpg" class="background-login" />
+    </div>
+
+    <script type="application/javascript" src="script.js"></script>
+  </body>
+</html>

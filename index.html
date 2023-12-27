@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <title>Sesi 5!</title>
+  </head>
+  <link rel="stylesheet" href="style.css" />
+  <body>
+    <!-- INI KONTEN -->
+    <div id="root">
+      <h1 id="login" style="font-size: 50pt">Login / Sign In</h1>
+      <input type="text" placeholder="username" id="usernameInput" />
+      <input type="password" placeholder="password" id="passwordInput" />
+      <div class="btn">
+        <button onclick="onLogin()" id="loginButton">Log In</button>
+        <button onclick="onCreate()" id="createButton">Sign In</button>
+      </div>
+
+      <br />
+      <div id="admin">
+        Maaf Membuat mu Kecewa Tuan Di sini Tidak Ada Yang Spesial Hehe 😂
+      </div>
+      <div id="basic">
+        <p>Login As Basic User</p>
+
+        <a href="https://lahnan.github.io/link-tree.html"
+          ><button>Link Tree</button></a
+        >
+
+        <script
+          type="text/javascript"
+          src="https://cdn.trakteer.id/js/embed/trbtn.min.js?date=18-11-2023"
+        ></script>
+        <script type="text/javascript">
+          (function () {
+            var trbtnId = trbtn.init(
+              "Dukung Lahnan DI Trakteer!",
+              "#2196F3",
+              "https://trakteer.id/lahnanadi",
+              "https://cdn.trakteer.id/images/embed/trbtn-icon.png?date=18-11-2023",
+              "40"
+            );
+            trbtn.draw(trbtnId);
+          })();
+        </script>
+      </div>
+      <div id="Dea">
+        <img src="Dea.jpg" style="border-radius: 100px" />
+        <h1>DEA AFRIZAL Link Tree</h1>
+        <a href="https://www.youtube.com/@deaafrizal"
+          ><button>Youtube!</button></a
+        >
+        <a href="https://www.instagram.com/dea.afrizal"
+          ><button style="width: 140px">Instagram!</button></a
+        >
+        <a href="https://deaafrizal.com/"><button>Web!</button></a>
+        <a href="https://github.com/deaaprizal/forum/discussions"
+          ><button>Forum!</button></a
+        >
+
+        <h1>Quotes</h1>
+        <p>"Sebenarnya otak kita sama aja, yang</p>
+        <p>membedakan hanya siapa yang</p>
+        <p>mulai belajar duluan dan siapa yang</p>
+        <p>belajar terus menerus."</p>
+        <p>-Dea Afrizal -</p>
+      </div>
+      <button onclick="onLogout()" id="logoutButton">Log out</button>
+    </div>
+
+    <div id="background">
+      <img src="background.jpg" class="background-login" />
+    </div>
+
+    <script type="application/javascript" src="script.js"></script>
+  </body>
+</html>
